@@ -1,0 +1,32 @@
+# model parameters setting
+seq_length: 398
+input_dim: 80
+num_classes: 663
+encoder_dim: 512
+num_encoder_layers: 6
+num_attention_heads: 8
+feedforward_expansion_factor: 4
+conv_expansion_factor: 2
+input_dropout: 0.1
+feedforward_dropout: 0.1
+attention_dropout: 0.1
+conv_dropout: 0.1
+conv_kernel_size: 31
+
+
+# training control
+file_num: 500
+clip_sec: 4
+batch_size: 1024
+epochs: 200
+original_learning_rate: 1e-3
+summary_steps: 100
+max_grad_norm: 3
+decay_rate: 0.96
+
+# file paths
+lmdb_audio_path: /home/ut_cmvmr/data/audio/lmdb/QQworld_raw_audio30s
+json_path: /home/ut_cmvmr/data/pair_meta/music_tag_top1_duration.json
+train_txt_aid_list: /home/ut_cmvmr/data/pair_meta/train_mid_list.txt
+test_txt_aid_list: /home/ut_cmvmr/data/pair_meta/test_mid_list.txt
+save_dir: checkpoints/checkpoints_Conformer_Audio_Pretrain

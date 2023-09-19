@@ -1,0 +1,32 @@
+# model parameters setting
+seq_length: 224
+input_dim: 896
+encoder_dim: 256
+num_encoder_layers: 10
+num_attention_heads: 16
+feedforward_expansion_factor: 4
+conv_expansion_factor: 2
+input_dropout: 0.1
+feedforward_dropout: 0.1
+attention_dropout: 0.1
+conv_dropout: 0.1
+conv_kernel_size: 31
+
+# training control
+file_num: 100
+clip_sec: 4
+batch_size: 800
+epochs: 150
+original_learning_rate: 1e-3
+summary_steps: 100
+max_grad_norm: 3
+decay_rate: 0.96
+max_frame_num: 30
+
+
+# file paths
+lmdb_video_path: /home/ut_cmvmr/data/video/lmdb/QQworld_raw_video30s/
+json_path: /home/ut_cmvmr/data/pair_meta/tags/all_vid_aid_tag.json
+train_txt_vid_list: /home/ut_cmvmr/data/pair_meta/monthly_pair_meta/train_vid.txt
+test_txt_vid_list: /home/ut_cmvmr/data/pair_meta/monthly_pair_meta/test_vid_mid_in_gallery.txt
+save_dir: checkpoints/checkpoints_Conformer_Video_Pretrain_weekly

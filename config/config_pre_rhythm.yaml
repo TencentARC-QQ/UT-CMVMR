@@ -1,0 +1,61 @@
+# model parameters setting
+a_data_dim: 512
+v_data_dim: 512
+t_data_dim: 768
+init_method: "kaiming"
+dim_rho: 768
+dim_theta: 256
+encoder_hidden_size: 1024
+decoder_hidden_size: 512
+dropout_encoder: 0.8
+dropout_decoder: 0.5
+depth_transformer: 1
+reg_loss: True
+additional_dropout: 0.5
+momentum: 0.55
+first_additional_triplet: 1
+second_additional_triplet: 1
+margin: 0
+max_clip: 7
+a_enc_dmodel: 512
+v_enc_dmodel: 512
+nlayers: 1
+dropout_enc: 0.8
+enc_hidden_dim: 1024
+cross_hidden_dim: 1024
+inter_topk: 1024
+intra_topk: 1024
+inter_margin: 0
+add_rhythm: 0
+
+
+
+# loss's feature
+keep_prob: 0.6
+loss_mask: [1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+
+# training control
+batch_size: 8192
+epochs: 200
+original_learning_rate: 3e-4
+max_grad_norm: 3
+decay_rate: 0.96
+
+
+# file paths
+lmdb_audio_path: ./data/audio/data_pretrained_audio30s_weeklydata
+lmdb_video_path: ./data/video/data_pretrained_video30s_weeklydata
+paraphrase_lmdb_text_path: ./data/text/lmdb/pic-paraphrase-multilingual-mpnet-base-v2-0.2
+all_lmdb_text_path: ./data/text/lmdb/pic-all-mpnet-base-v2-0.2
+train_txt_vid_list: ./data/pair_meta/monthly_pair_meta/train_vid_noless2.txt
+test_txt_vid_list: ./data/pair_meta/monthly_pair_meta/test_vid_mid_in_gallery.txt
+valid_txt_vid_list: ./data/pair_meta/monthly_pair_meta/valid_vid.txt
+test_txt_aid_list: ./data/pair_meta/music_gallery/gallery_id_in_all.txt
+audio_rhythm_pkl: ./data/rhythm_meta/audio_id_in_lmdb_rhythm_meta_quantized.pkl
+video_optical_json: ./data/optic_flow_meta/video_id_in_lmdb_flow_meta_quantized.json
+json_path: ./data/pair_meta/tags/all_vid_aid_tag_noless2.json
+save_dir: checkpoints/checkpoints_pretrain_rhythm
+
+# test control
+weight: 0.6
